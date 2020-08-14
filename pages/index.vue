@@ -15,7 +15,6 @@ export default {
     PostList,
   },
   asyncData(context, callback) {
-    console.log("asyncData running in main!");
     setTimeout(() => {
       callback(null, {
         loadedPosts: [
@@ -42,7 +41,7 @@ export default {
           },
         ],
       });
-    }, 3000);
+    }, 1000);
   },
   // data() {
   //   return {

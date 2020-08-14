@@ -1,20 +1,43 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1>Title of the Post</h1>
+      <h1>{{ loadedPosts.title }}</h1>
       <div class="post-details">
-        <div>Last updated on XXX</div>
-        <div>Written by NAME</div>
+        <div class="post-detail">{{ loadedPosts.updateDate }}</div>
+        <div class="post-detail">{{ loadedPosts.author }}</div>
       </div>
-      <p>Conten of the post</p>
+      <p>{{ loadedPosts.content }}</p>
     </section>
     <section class="post-feedback">
-      <p>Let me know what you think about the post, send a mail to <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a></p>
+      <p>
+        Let me know what you think about the post, send a mail to
+        <a href="mailto:feedback@my-awesome-domain.com"
+          >feedback@my-awesome-domain.com</a
+        >
+      </p>
     </section>
   </div>
-
 </template>
-
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: {
+          id: "1",
+          title: "This is first post (ID: " + context.params.id + " )",
+          previewText: "This is preview text",
+          author: "Leo Yu",
+          updateDate: new Date(),
+          content: "some dummy text in this post",
+          thumbnail:
+            "https://assets.media-platform.com/gizmodo/dist/images/2020/03/24/200323_quasartsunamis_top-w1280.jpg",
+        },
+      });
+    }, 1000);
+  },
+};
+</script>
 <style scoped>
 .single-post-page {
   padding: 30px;
