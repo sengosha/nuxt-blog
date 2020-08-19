@@ -17,7 +17,10 @@ export default {
   },
   methods: {
     onSubmitted(postData) {
-      axios.post('https://nuxt-blog-bb323.firebaseio.com/post.json', postData)
+      axios.post('https://nuxt-blog-bb323.firebaseio.com/post.json', {
+        ...postData,
+        updateDate: new Date()
+      })
       .then( result => console.log(result))
       .catch(err => console.log(err))
     }
