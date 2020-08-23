@@ -22,7 +22,7 @@
 import axios from "axios";
 export default {
   asyncData(context) {
-    return axios.get('https://nuxt-blog-bb323.firebaseio.com/post/' + context.params.id + '.json')
+    return axios.get( process.env.baseUrl + '/post/' + context.params.id + '.json')
     .then( res => {
       return {
         loadedPosts: res.data
@@ -30,6 +30,9 @@ export default {
     })
     .catch( e => context.error(e))
   },
+  head: {
+    title: 'Post page'
+  }
 };
 </script>
 <style scoped>
