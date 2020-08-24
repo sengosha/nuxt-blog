@@ -47,7 +47,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~plugins/core-component.js'
+    '~plugins/core-component.js',
+    '~plugins/date-filter.js'
   ],
   /*
   ** Auto import components
