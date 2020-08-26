@@ -76,10 +76,14 @@ export default {
   build: {
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-bb323.firebaseio.com'
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-bb323.firebaseio.com',
+    fbAPIKey: 'AIzaSyCPQzjDSSriMRuBwW1CtFBKh5DCvqe_rQY'
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  // router: {
+  //   middleware: 'log'
+  // }
 }
