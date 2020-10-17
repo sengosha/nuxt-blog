@@ -1,6 +1,6 @@
 var bodyParser = require('body-parser')
 
-export default {
+module.exports = {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -87,8 +87,8 @@ export default {
   // router: {
   //   middleware: 'log'
   // }
-  serverMiddleware: [
-    bodyParser.json(),
-    '~/api'
-  ]
+  // serverMiddleware: [
+  //   bodyParser.json(),
+  //   '~/api'
+  // ]
 }
